@@ -1,0 +1,39 @@
+{
+  "start": "https://aeloria.pokeable.app/",
+  "origin": "https://aeloria.pokeable.app",
+  "gated": false,
+  "sessionRenewal": "none",
+  "requests": 6,
+  "fetched": 6,
+  "bytes": 1359953,
+  "paths": [
+    "assets/index-CBRcanzC.js",
+    "assets/index-Ctb6YBeZ.css",
+    "assets/react-D7CucQ1e.js",
+    "assets/three-Bf1rlsf7.js",
+    "assets/worker-BdHOuDMt.js",
+    "index.html"
+  ],
+  "unresolved": [],
+  "unreachable": [],
+  "external": [
+    {
+      "pattern": "fonts.googleapis.com (Google Fonts stylesheet)",
+      "kind": "external-stylesheet",
+      "note": "Marcellus / Figtree / IBM Plex Mono — the game's type, loaded from the Google Fonts CDN; kept external per the fleet socker precedent, never backfilled into the capture. The game renders and flies with the stylesheet blocked (fallback fonts)."
+    },
+    {
+      "pattern": "static.cloudflareinsights.com beacon.min.js + same-origin /cdn-cgi/rum",
+      "kind": "platform-telemetry",
+      "note": "Cloudflare Web Analytics injected/staged by the pokeable.app platform host; fail-soft — blocked or failed telemetry never affects the game (the loopback boot test answered /cdn-cgi/rum with 404 and the game ran normally)."
+    }
+  ],
+  "notes": [
+    "Closure method: static scan of every captured HTML/JS/CSS iterated to fixpoint (script/link refs, static/bare/dynamic imports, new URL(..., import.meta.url) worker paths, __vite__mapDeps tables, asset-path string literals): round 1 found the four entry-referenced assets, round 2 found the worker chunk from the app bundle's new URL(\"/assets/worker-BdHOuDMt.js\", import.meta.url) path, rounds 3-4 found nothing new; cross-checked against the opencli browser network log while playing — the five same-origin asset requests matched the capture byte-for-byte (decodedBodySize 240,317 / 17,253 / 276,084 / 683,693 / 140,475), zero 404s, zero off-origin game requests.",
+    "Scanner false positives (recorded, not references, never captured): /assets/zustand (a bare specifier remnant inside an error string) and the property accesses this.data / t.data / s.data / f.data misread by the asset-path regex — every candidate probe answered with the host's SPA fallback and was discarded.",
+    "Upstream quirk: assets/react-D7CucQ1e.js is served intermittently — repeated direct probes returned the entry document (HTTP 200 text/html SPA fallback) while the capture holds the real 200 text/javascript bytes (276,084 B, sha256 c92c0fa5636bf94b…); tools/update.mjs retries once and records a fallback response as known noise instead of drift.",
+    "Entry document is the browser-variant byte sequence (2,131 B, sha256 78f363f5…): the Cloudflare edge injects the static cloudflareinsights beacon tag only into browser-style navigations, so the capture was fetched with browser Accept headers and tools/update.mjs normalizes the beacon tag.",
+    "Boot test: mirror root served on loopback (entry + all five assets HTTP 200, bytes identical to the capture), the game grew the seeded world in the worker and entered gameplay; docs/cover.png and docs/boot-2026-10-13.png captured from actual gameplay; listener PID 8608 killed, port 4311 proven closed (netstat: no LISTENING row; curl: connection refused).",
+    "Drift probe tools/update.mjs: up to date — 6 captured files identical upstream; _mirror-report.json excluded by name (local-only record)."
+  ]
+}

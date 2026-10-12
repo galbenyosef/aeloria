@@ -1,0 +1,30 @@
+{
+  "generated": "2026-10-13",
+  "origin": "https://aeloria.pokeable.app",
+  "files": {
+    "assets/index-CBRcanzC.js": {
+      "bytes": 240317,
+      "sha256": "69c5a92b376b17c2a331fb96de8b849a974e18d3896328d172dc7acbd5b6052e"
+    },
+    "assets/index-Ctb6YBeZ.css": {
+      "bytes": 17253,
+      "sha256": "2f27032d7ce2c57ac741cc5c117efbf59dfe7c5bd53e040b4b5b5af205b859cb"
+    },
+    "assets/react-D7CucQ1e.js": {
+      "bytes": 276084,
+      "sha256": "c92c0fa5636bf94b3b48e5f3556432796f5dd03a48ecf68500060d982dbd8254"
+    },
+    "assets/three-Bf1rlsf7.js": {
+      "bytes": 683693,
+      "sha256": "5719ba332ec7d1162b7caee2d43d718f78d577eed5037361d6eb92290bb5aa3b"
+    },
+    "assets/worker-BdHOuDMt.js": {
+      "bytes": 140475,
+      "sha256": "e41a7360ca33fe360096f47fe6a904e0119615c2843a2cdfab9ceb4320ed7386"
+    },
+    "index.html": {
+      "bytes": 2131,
+      "sha256": "78f363f5e65d6a57aa751c091bebd499b87d759e2c5f11cb4894b231f6d7d004"
+    }
+  }
+}
