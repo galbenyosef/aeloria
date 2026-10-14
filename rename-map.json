@@ -1,0 +1,1208 @@
+{
+  "note": "Semantic rename map for src/, recovered mechanically by anchor alignment from the committed slices (tools/recover-scoped-map.mjs): the token streams of a slice and its readable range must be identical in every non-identifier position, so every differing identifier pair is a proven rename, not a guess. `files` is a word-boundary map, used only where a name means the same thing everywhere in the slice and is never a property or object key; `scoped` addresses the rest by exact token index as { name: [[i, target], …] }. tools/derive.mjs re-applies this map when it re-cuts src/ (index-validated), tools/verify-rename.mjs and tools/audit.js re-prove every slice from it, and tools/check-chunk.mjs proves cross-slice references still resolve. Regenerate with `node tools/recover-scoped-map.mjs` after any rename batch.",
+  "files": {
+    "assets/index-CBRcanzC-01.js": {
+      "$e": "AdditiveBlending",
+      "Ai": "PlaneGeometry",
+      "As": "UniformsUtils",
+      "Bi": "PCFSoftShadowMap",
+      "Bs": "FloatType",
+      "Ds": "InstancedBufferGeometry",
+      "Ei": "DirectionalLight",
+      "Es": "LineSegments",
+      "Fs": "TorusGeometry",
+      "Je": "InstancedBufferAttribute",
+      "Le": "DynamicDrawUsage",
+      "Ns": "Object3D",
+      "Pe": "Float32BufferAttribute",
+      "Pt": "Shape",
+      "Qt": "RGBAFormat",
+      "Ri": "Fog",
+      "Rs": "CapsuleGeometry",
+      "Se": "Group",
+      "We": "InstancedMesh",
+      "Zt": "DataTexture",
+      "_s": "NearestFilter",
+      "ci": "reactHooks",
+      "cs": "IcosahedronGeometry",
+      "di": "useFrame",
+      "dt": "CatmullRomCurve3",
+      "fi": "LatheGeometry",
+      "gi": "MeshDepthMaterial",
+      "hi": "R3FCanvas",
+      "je": "Matrix4",
+      "kt": "ShapeGeometry",
+      "li": "createStore",
+      "ls": "LineCurve3",
+      "mi": "ConeGeometry",
+      "mt": "Sphere",
+      "oi": "reactDomClient",
+      "pi": "NormalBlending",
+      "qe": "Quaternion",
+      "ui": "useThree",
+      "vi": "TubeGeometry",
+      "vt": "Points",
+      "wt": "SphereGeometry",
+      "xi": "RGBADepthPacking",
+      "yi": "MeshBasicMaterial",
+      "yt": "CylinderGeometry",
+      "zi": "HemisphereLight",
+      "zs": "UniformsLib"
+    },
+    "assets/index-CBRcanzC-02.js": {
+      "At": "worldBoundary",
+      "B": "clamp",
+      "Be": "noGlow",
+      "Ct": "perlinGradients",
+      "Di": "Terrain",
+      "Et": "geometryFromPart",
+      "F": "lerp",
+      "Gs": "createRoot",
+      "Li": "mergePartsData",
+      "Ne": "capsuleBetween",
+      "Ui": "smoothNormals",
+      "Vs": "createSeededNoise",
+      "Z": "TAU",
+      "be": "smoothstep",
+      "ds": "defaultAtlasCell",
+      "fe": "waterLevel",
+      "fi": "LatheGeometry",
+      "oe": "worldSize",
+      "oi": "reactDomClient",
+      "qe": "Quaternion",
+      "re": "paintGeometry",
+      "tt": "mulberry32",
+      "us": "domClient",
+      "xe": "createColor",
+      "yt": "CylinderGeometry",
+      "zt": "latheProfile"
+    },
+    "assets/index-CBRcanzC-03.js": {
+      "A": "shaderUniforms",
+      "As": "UniformsUtils",
+      "Ge": "fieldSize",
+      "Hi": "createWaterMaterial",
+      "Ii": "glslRipples",
+      "Oi": "planetDirection",
+      "Ws": "glslFieldAt",
+      "at": "MeshStandardMaterial",
+      "bt": "glslNoise3",
+      "es": "glslAeFog",
+      "fe": "waterLevel",
+      "ji": "createSkyMaterial",
+      "me": "glslNum",
+      "nt": "applyBioFog",
+      "oe": "worldSize",
+      "ve": "createBioMaterial",
+      "zs": "UniformsLib"
+    },
+    "assets/index-CBRcanzC-04.js": {
+      "$i": "blendSkyPalette",
+      "$s": "skyScaleKeys",
+      "A": "shaderUniforms",
+      "As": "UniformsUtils",
+      "Es": "LineSegments",
+      "F": "lerp",
+      "Gi": "createWaterfallMaterial",
+      "Rt": "placeSyllables",
+      "Vi": "createRain",
+      "Wi": "skyPresets",
+      "be": "smoothstep",
+      "es": "glslAeFog",
+      "fs": "skyColor",
+      "ke": "mountDefs",
+      "ot": "skyColorSets",
+      "pe": "weatherState",
+      "pi": "NormalBlending",
+      "ps": "spires",
+      "qi": "weatherPresets",
+      "qs": "createGlowPointsMaterial",
+      "ts": "skyKeys",
+      "ue": "skyBlend",
+      "zs": "UniformsLib"
+    },
+    "assets/index-CBRcanzC-05.js": {
+      "Be": "noGlow",
+      "F": "lerp",
+      "Ft": "buildRibbon",
+      "Ki": "randomMountPalette",
+      "Ks": "buildMountBody",
+      "Li": "mergePartsData",
+      "Ne": "capsuleBetween",
+      "Ns": "Object3D",
+      "Oe": "mergePaintedParts",
+      "Pe": "Float32BufferAttribute",
+      "Pt": "Shape",
+      "Rt": "placeSyllables",
+      "Se": "Group",
+      "St": "paletteGradientCss",
+      "Vs": "createSeededNoise",
+      "Xi": "glowMaterial",
+      "Ye": "tubeFromCurve",
+      "Yi": "avatarNoise",
+      "dt": "CatmullRomCurve3",
+      "kt": "ShapeGeometry",
+      "ls": "LineCurve3",
+      "lt": "mountBodyMaterial",
+      "re": "paintGeometry",
+      "ve": "createBioMaterial",
+      "wt": "SphereGeometry",
+      "xe": "createColor",
+      "yt": "CylinderGeometry",
+      "zt": "latheProfile"
+    },
+    "assets/index-CBRcanzC-06.js": {
+      "At": "worldBoundary",
+      "Be": "noGlow",
+      "Bt": "gravity",
+      "Dt": "resolveSolidCollision",
+      "F": "lerp",
+      "Fs": "TorusGeometry",
+      "Ie": "maxThrust",
+      "Ji": "tuckDrag",
+      "Ne": "capsuleBetween",
+      "Ns": "Object3D",
+      "Oe": "mergePaintedParts",
+      "Qi": "coastDrag",
+      "Rs": "CapsuleGeometry",
+      "Se": "Group",
+      "Ut": "resolveBoxCollision",
+      "Wt": "disposeTree",
+      "Xi": "glowMaterial",
+      "Yi": "avatarNoise",
+      "Ys": "animateWings",
+      "Zi": "buildRiderFigure",
+      "_t": "minSpeed",
+      "dt": "CatmullRomCurve3",
+      "ea": "upAxis",
+      "mi": "ConeGeometry",
+      "ms": "flightState",
+      "re": "paintGeometry",
+      "ta": "findIsleSurface",
+      "vi": "TubeGeometry",
+      "vs": "wrapAngle",
+      "wt": "SphereGeometry",
+      "xe": "createColor",
+      "yt": "CylinderGeometry"
+    },
+    "assets/index-CBRcanzC-07.js": {
+      "A": "shaderUniforms",
+      "B": "clamp",
+      "Bt": "gravity",
+      "Dt": "resolveSolidCollision",
+      "F": "lerp",
+      "Ie": "maxThrust",
+      "Ji": "tuckDrag",
+      "Ks": "buildMountBody",
+      "Qi": "coastDrag",
+      "Se": "Group",
+      "Ut": "resolveBoxCollision",
+      "Wt": "disposeTree",
+      "Ys": "animateWings",
+      "Z": "TAU",
+      "Zi": "buildRiderFigure",
+      "_t": "minSpeed",
+      "ea": "upAxis",
+      "fe": "waterLevel",
+      "sa": "Mount",
+      "ta": "findIsleSurface",
+      "vs": "wrapAngle"
+    },
+    "assets/index-CBRcanzC-08.js": {
+      "A": "shaderUniforms",
+      "B": "clamp",
+      "F": "lerp",
+      "Ki": "randomMountPalette",
+      "Ks": "buildMountBody",
+      "Mt": "profileBeta",
+      "Qe": "whaleSpineRadius",
+      "Re": "tendrilCount",
+      "Se": "Group",
+      "Wt": "disposeTree",
+      "Xe": "sporeCount",
+      "Xs": "profileNorm",
+      "Ys": "animateWings",
+      "Z": "TAU",
+      "Zs": "leviathanProfile",
+      "aa": "FlockManager",
+      "ca": "profileRadius",
+      "ce": "smoothRange",
+      "da": "whaleSurfacePoint",
+      "de": "ribbonSegments",
+      "ee": "whaleSpineSegments",
+      "fa": "glslWhaleSkin",
+      "gs": "profilePeak",
+      "gt": "glslWhaleProfile",
+      "ha": "profileFlatten",
+      "ia": "WildMount",
+      "la": "profileHeight",
+      "na": "leviathanUp",
+      "ne": "whalePathSamples",
+      "oa": "profileWidth",
+      "pa": "glslWhaleBelly",
+      "qt": "whaleLength",
+      "ra": "whaleSpeed",
+      "ss": "glslWhaleSpine",
+      "st": "profileAlpha",
+      "tt": "mulberry32",
+      "ua": "profileFinBump"
+    },
+    "assets/index-CBRcanzC-09.js": {
+      "$e": "AdditiveBlending",
+      "$t": "buildWingGeometry",
+      "A": "shaderUniforms",
+      "It": "mountWingSpec",
+      "Lt": "membraneMaterial",
+      "Ot": "flukeSpec",
+      "Pe": "Float32BufferAttribute",
+      "at": "MeshStandardMaterial",
+      "bt": "glslNoise3",
+      "ce": "smoothRange",
+      "fa": "glslWhaleSkin",
+      "ga": "leviathanGardenMaterial",
+      "gi": "MeshDepthMaterial",
+      "gt": "glslWhaleProfile",
+      "ma": "leviathanBodyMaterial",
+      "nt": "applyBioFog",
+      "ss": "glslWhaleSpine",
+      "va": "leviathanDepthMaterial",
+      "wa": "buildDorsalFin",
+      "xa": "leviathanRibbonMaterial",
+      "xi": "RGBADepthPacking",
+      "xs": "wingtipBump",
+      "ya": "mistMaterial"
+    },
+    "assets/index-CBRcanzC-10.js": {
+      "Pe": "Float32BufferAttribute",
+      "ba": "buildBulbStem",
+      "wt": "SphereGeometry",
+      "yt": "CylinderGeometry"
+    },
+    "assets/index-CBRcanzC-11.js": {
+      "$t": "buildWingGeometry",
+      "A": "shaderUniforms",
+      "B": "clamp",
+      "Bs": "FloatType",
+      "Ds": "InstancedBufferGeometry",
+      "It": "mountWingSpec",
+      "Je": "InstancedBufferAttribute",
+      "Le": "DynamicDrawUsage",
+      "Lt": "membraneMaterial",
+      "Ot": "flukeSpec",
+      "Qe": "whaleSpineRadius",
+      "Qt": "RGBAFormat",
+      "Re": "tendrilCount",
+      "Sa": "Leviathan",
+      "Se": "Group",
+      "Xe": "sporeCount",
+      "Z": "TAU",
+      "Zs": "leviathanProfile",
+      "Zt": "DataTexture",
+      "_s": "NearestFilter",
+      "ba": "buildBulbStem",
+      "da": "whaleSurfacePoint",
+      "de": "ribbonSegments",
+      "ee": "whaleSpineSegments",
+      "ga": "leviathanGardenMaterial",
+      "je": "Matrix4",
+      "ma": "leviathanBodyMaterial",
+      "mt": "Sphere",
+      "na": "leviathanUp",
+      "ne": "whalePathSamples",
+      "qs": "createGlowPointsMaterial",
+      "qt": "whaleLength",
+      "ra": "whaleSpeed",
+      "tt": "mulberry32",
+      "va": "leviathanDepthMaterial",
+      "vt": "Points",
+      "wa": "buildDorsalFin",
+      "xa": "leviathanRibbonMaterial",
+      "ya": "mistMaterial"
+    },
+    "assets/index-CBRcanzC-12.js": {
+      "$e": "AdditiveBlending",
+      "A": "shaderUniforms",
+      "Fs": "TorusGeometry",
+      "Ma": "SeedField",
+      "Se": "Group",
+      "Ta": "RaceRings",
+      "We": "InstancedMesh",
+      "cs": "IcosahedronGeometry",
+      "je": "Matrix4",
+      "qe": "Quaternion",
+      "xt": "createGlowMaterial",
+      "yi": "MeshBasicMaterial"
+    },
+    "assets/index-CBRcanzC-13.js": {
+      "ka": "SoundEngine"
+    },
+    "assets/index-CBRcanzC-14.js": {
+      "B": "clamp",
+      "Pa": "InputController",
+      "jt": "upVector"
+    },
+    "assets/index-CBRcanzC-15.js": {
+      "B": "clamp",
+      "Ca": "CameraRig",
+      "F": "lerp",
+      "jt": "upVector",
+      "qe": "Quaternion"
+    },
+    "assets/index-CBRcanzC-16.js": {
+      "$e": "AdditiveBlending",
+      "A": "shaderUniforms",
+      "Ds": "InstancedBufferGeometry",
+      "Es": "LineSegments",
+      "Je": "InstancedBufferAttribute",
+      "Kn": "buildGrassGeometry",
+      "Pe": "Float32BufferAttribute",
+      "Qt": "RGBAFormat",
+      "Ws": "glslFieldAt",
+      "Xn": "TrailRibbons",
+      "Yn": "createMinimapTexture",
+      "Zn": "createSpeedLines",
+      "Zt": "DataTexture",
+      "at": "MeshStandardMaterial",
+      "bt": "glslNoise3",
+      "mt": "Sphere",
+      "nt": "applyBioFog",
+      "qe": "Quaternion",
+      "tt": "mulberry32"
+    },
+    "assets/index-CBRcanzC-17.js": {
+      "Jn": "toastSeq",
+      "Pe": "Float32BufferAttribute",
+      "Qn": "SplashParticles",
+      "Rs": "CapsuleGeometry",
+      "We": "InstancedMesh",
+      "X": "preferences",
+      "Y": "showToast",
+      "Z": "TAU",
+      "ai": "qualityName",
+      "b": "useGameStore",
+      "er": "detectQuality",
+      "ht": "cameraModes",
+      "ii": "upY",
+      "je": "Matrix4",
+      "li": "createStore",
+      "qe": "Quaternion",
+      "tr": "BirdFlock",
+      "ut": "formatAltitude",
+      "vt": "Points"
+    },
+    "assets/index-CBRcanzC-18.js": {
+      "$i": "blendSkyPalette",
+      "A": "shaderUniforms",
+      "Ai": "PlaneGeometry",
+      "B": "clamp",
+      "Bi": "PCFSoftShadowMap",
+      "Bs": "FloatType",
+      "Ca": "CameraRig",
+      "Di": "Terrain",
+      "Ei": "DirectionalLight",
+      "Et": "geometryFromPart",
+      "F": "lerp",
+      "Ge": "fieldSize",
+      "Gi": "createWaterfallMaterial",
+      "Hi": "createWaterMaterial",
+      "Je": "InstancedBufferAttribute",
+      "Kn": "buildGrassGeometry",
+      "Ma": "SeedField",
+      "Pa": "InputController",
+      "Qn": "SplashParticles",
+      "Qt": "RGBAFormat",
+      "Ri": "Fog",
+      "Sa": "Leviathan",
+      "Se": "Group",
+      "St": "paletteGradientCss",
+      "Ta": "RaceRings",
+      "Vi": "createRain",
+      "Vs": "createSeededNoise",
+      "We": "InstancedMesh",
+      "X": "preferences",
+      "Xn": "TrailRibbons",
+      "Y": "showToast",
+      "Yn": "createMinimapTexture",
+      "Z": "TAU",
+      "Zn": "createSpeedLines",
+      "Zt": "DataTexture",
+      "_s": "NearestFilter",
+      "aa": "FlockManager",
+      "b": "useGameStore",
+      "be": "smoothstep",
+      "fe": "waterLevel",
+      "ht": "cameraModes",
+      "ii": "upY",
+      "ji": "createSkyMaterial",
+      "ka": "SoundEngine",
+      "ms": "flightState",
+      "mt": "Sphere",
+      "oe": "worldSize",
+      "qs": "createGlowPointsMaterial",
+      "sa": "Mount",
+      "sr": "AeloriaEngine",
+      "tr": "BirdFlock",
+      "ut": "formatAltitude",
+      "ve": "createBioMaterial",
+      "vt": "Points",
+      "wt": "SphereGeometry",
+      "zi": "HemisphereLight"
+    },
+    "assets/index-CBRcanzC-19.js": {
+      "G": "React",
+      "P": "engine",
+      "St": "paletteGradientCss",
+      "Vt": "formatTime",
+      "Xt": "setSeed",
+      "ar": "useRef",
+      "as": "toggleFullscreen",
+      "b": "useGameStore",
+      "ci": "reactHooks",
+      "ft": "SettingRow",
+      "ir": "shallowEqual",
+      "it": "fadeToBlack",
+      "ke": "mountDefs",
+      "ks": "creditIcon",
+      "lr": "FlightPanel",
+      "ni": "fullscreenAvailable",
+      "nr": "authorUrl",
+      "ns": "useShallow",
+      "or": "TopBar",
+      "ri": "creditsLine",
+      "rr": "platformUrl",
+      "rs": "formatDistance",
+      "sr": "AeloriaEngine",
+      "u": "jsxRuntime"
+    },
+    "assets/index-CBRcanzC-20.js": {
+      "G": "React",
+      "P": "engine",
+      "St": "paletteGradientCss",
+      "Xt": "setSeed",
+      "b": "useGameStore",
+      "cr": "SkyPanel",
+      "dr": "RiderRoster",
+      "fr": "BondPanel",
+      "ft": "SettingRow",
+      "hr": "OnlineBadge",
+      "ke": "mountDefs",
+      "kr": "FullscreenButton",
+      "lr": "FlightPanel",
+      "ni": "fullscreenAvailable",
+      "ns": "useShallow",
+      "u": "jsxRuntime",
+      "ur": "SettingsPanel"
+    },
+    "assets/index-CBRcanzC-21.js": {
+      "G": "React",
+      "P": "engine",
+      "Vt": "formatTime",
+      "b": "useGameStore",
+      "fr": "BondPanel",
+      "gr": "CompassCanvas",
+      "it": "fadeToBlack",
+      "mr": "MinimapCanvas",
+      "pr": "ActivitiesPanel",
+      "rs": "formatDistance",
+      "u": "jsxRuntime",
+      "vr": "HudOverlay",
+      "xr": "Reticle"
+    },
+    "assets/index-CBRcanzC-22.js": {
+      "Cr": "TOUCH_ROWS",
+      "G": "React",
+      "Mr": "LoadingOverlay",
+      "P": "engine",
+      "Pr": "HELP_ROWS",
+      "Sr": "Toast",
+      "St": "paletteGradientCss",
+      "Tr": "PhotoModeHint",
+      "as": "toggleFullscreen",
+      "b": "useGameStore",
+      "br": "RiderCarousel",
+      "it": "fadeToBlack",
+      "ke": "mountDefs",
+      "kr": "FullscreenButton",
+      "ri": "creditsLine",
+      "u": "jsxRuntime",
+      "wr": "TouchControls",
+      "yr": "WorldMapPanel"
+    },
+    "assets/index-CBRcanzC-23.js": {
+      "Ar": "PauseMenu",
+      "Cr": "TOUCH_ROWS",
+      "Er": "IntroOverlay",
+      "G": "React",
+      "He": "deviceQuality",
+      "P": "engine",
+      "Pr": "HELP_ROWS",
+      "Ps": "ControlsHelp",
+      "Rr": "FrameLoop",
+      "X": "preferences",
+      "ai": "qualityName",
+      "as": "toggleFullscreen",
+      "b": "useGameStore",
+      "di": "useFrame",
+      "er": "detectQuality",
+      "ni": "fullscreenAvailable",
+      "ns": "useShallow",
+      "os": "pixelRatioCap",
+      "ri": "creditsLine",
+      "u": "jsxRuntime",
+      "ui": "useThree",
+      "zr": "applyUrlParams"
+    },
+    "assets/index-CBRcanzC-24.js": {
+      "Ar": "PauseMenu",
+      "Br": "PresenceClient",
+      "Er": "IntroOverlay",
+      "Fr": "KeyboardShortcuts",
+      "G": "React",
+      "Gs": "createRoot",
+      "He": "deviceQuality",
+      "Mr": "LoadingOverlay",
+      "Nr": "App",
+      "P": "engine",
+      "Rr": "FrameLoop",
+      "Sr": "Toast",
+      "Tr": "PhotoModeHint",
+      "X": "preferences",
+      "Xt": "setSeed",
+      "Y": "showToast",
+      "as": "toggleFullscreen",
+      "b": "useGameStore",
+      "br": "RiderCarousel",
+      "dr": "RiderRoster",
+      "gr": "CompassCanvas",
+      "hi": "R3FCanvas",
+      "it": "fadeToBlack",
+      "ke": "mountDefs",
+      "or": "TopBar",
+      "os": "pixelRatioCap",
+      "pr": "ActivitiesPanel",
+      "u": "jsxRuntime",
+      "ur": "SettingsPanel",
+      "vr": "HudOverlay",
+      "wr": "TouchControls",
+      "xr": "Reticle",
+      "yr": "WorldMapPanel",
+      "zr": "applyUrlParams"
+    },
+    "assets/worker-BdHOuDMt-01.js": {
+      "Bs": "perlinGradients",
+      "De": "smoothNormals",
+      "H": "smoothstep",
+      "Ot": "clamp",
+      "Qt": "atlasCells",
+      "St": "lerp",
+      "Ts": "capsuleBetween",
+      "Ue": "latheProfile",
+      "W": "TAU",
+      "bt": "waterLevel",
+      "ct": "colorLerp",
+      "en": "buildGrassBlades",
+      "fi": "buildBlob",
+      "k": "createColor",
+      "nn": "landmarkTable",
+      "pi": "mulberry32",
+      "rs": "noGlow",
+      "rt": "paintGeometry",
+      "sn": "worldBoundary",
+      "tn": "createSeededNoise",
+      "tt": "worldSize",
+      "wt": "mergeParts"
+    },
+    "assets/worker-BdHOuDMt-02.js": {
+      "Ot": "clamp",
+      "St": "lerp",
+      "Ue": "latheProfile",
+      "W": "TAU",
+      "an": "buildBloomPlant",
+      "bt": "waterLevel",
+      "cn": "buildFern",
+      "ct": "colorLerp",
+      "fi": "buildBlob",
+      "fn": "buildTrunk",
+      "hn": "buildShrub",
+      "k": "createColor",
+      "ln": "buildMushroom",
+      "mn": "buildGlowTrunk",
+      "on": "buildLumenPlant",
+      "pn": "buildRock",
+      "rn": "Terrain",
+      "rs": "noGlow",
+      "rt": "paintGeometry",
+      "tt": "worldSize",
+      "un": "buildTree",
+      "wt": "mergeParts"
+    },
+    "assets/worker-BdHOuDMt-03.js": {
+      "De": "smoothNormals",
+      "H": "smoothstep",
+      "Mn": "buildRoundedCanopy",
+      "Ot": "clamp",
+      "Qt": "atlasCells",
+      "Ts": "capsuleBetween",
+      "Ue": "latheProfile",
+      "W": "TAU",
+      "as": "tintBrown",
+      "ct": "colorLerp",
+      "dn": "buildForestTrees",
+      "en": "buildGrassBlades",
+      "fi": "buildBlob",
+      "gn": "buildVineColumns",
+      "k": "createColor",
+      "os": "placeRock",
+      "rt": "paintGeometry",
+      "wt": "mergeParts",
+      "xn": "buildSmallTrees",
+      "yn": "buildGroveTrees"
+    },
+    "assets/worker-BdHOuDMt-04.js": {
+      "An": "fieldSize",
+      "De": "smoothNormals",
+      "H": "smoothstep",
+      "Mt": "toArray",
+      "bn": "buildFrond",
+      "ct": "colorLerp",
+      "k": "createColor",
+      "rt": "paintGeometry",
+      "wn": "buildStoneArch",
+      "wt": "mergeParts",
+      "zn": "qualityPresets"
+    },
+    "assets/worker-BdHOuDMt-05.js": {
+      "Mn": "buildRoundedCanopy",
+      "Mt": "toArray",
+      "Ot": "clamp",
+      "Rs": "packPoints",
+      "St": "lerp",
+      "W": "TAU",
+      "_n": "generateWorld",
+      "an": "buildBloomPlant",
+      "bn": "buildFrond",
+      "bt": "waterLevel",
+      "cn": "buildFern",
+      "dn": "buildForestTrees",
+      "fn": "buildTrunk",
+      "gn": "buildVineColumns",
+      "hn": "buildShrub",
+      "k": "createColor",
+      "ln": "buildMushroom",
+      "mn": "buildGlowTrunk",
+      "nn": "landmarkTable",
+      "on": "buildLumenPlant",
+      "pi": "mulberry32",
+      "pn": "buildRock",
+      "rn": "Terrain",
+      "sn": "worldBoundary",
+      "tn": "createSeededNoise",
+      "tt": "worldSize",
+      "un": "buildTree",
+      "vn": "buildHeightField",
+      "wn": "buildStoneArch",
+      "xn": "buildSmallTrees",
+      "yn": "buildGroveTrees",
+      "zn": "qualityPresets"
+    },
+    "assets/worker-BdHOuDMt-06.js": {
+      "An": "fieldSize",
+      "Fn": "collectTransferables",
+      "H": "smoothstep",
+      "Ot": "clamp",
+      "Rs": "packPoints",
+      "_n": "generateWorld",
+      "bt": "waterLevel",
+      "tt": "worldSize",
+      "vn": "buildHeightField"
+    }
+  },
+  "scoped": {
+    "assets/index-CBRcanzC-01.js": {
+      "G": [
+        [
+          16,
+          "React"
+        ]
+      ],
+      "at": [
+        [
+          78,
+          "MeshStandardMaterial"
+        ]
+      ],
+      "u": [
+        [
+          20,
+          "jsxRuntime"
+        ]
+      ]
+    },
+    "assets/index-CBRcanzC-04.js": {
+      "$e": [
+        [
+          142,
+          "AdditiveBlending"
+        ]
+      ]
+    },
+    "assets/index-CBRcanzC-05.js": {
+      "Nt": [
+        [
+          870,
+          "mountWingMaterial"
+        ],
+        [
+          2848,
+          "mountWingMaterial"
+        ],
+        [
+          3166,
+          "mountWingMaterial"
+        ],
+        [
+          3543,
+          "mountWingMaterial"
+        ]
+      ]
+    },
+    "assets/index-CBRcanzC-09.js": {
+      "pa": [
+        [
+          151,
+          "glslWhaleBelly"
+        ]
+      ]
+    },
+    "assets/index-CBRcanzC-18.js": {
+      "ke": [
+        [
+          3618,
+          "mountDefs"
+        ],
+        [
+          4073,
+          "mountDefs"
+        ],
+        [
+          4463,
+          "mountDefs"
+        ],
+        [
+          6811,
+          "mountDefs"
+        ],
+        [
+          16381,
+          "mountDefs"
+        ]
+      ],
+      "ps": [
+        [
+          4090,
+          "spires"
+        ],
+        [
+          10231,
+          "spires"
+        ]
+      ]
+    },
+    "assets/index-CBRcanzC-19.js": {
+      "Ts": [
+        [
+          497,
+          "linkProps"
+        ],
+        [
+          599,
+          "linkProps"
+        ],
+        [
+          651,
+          "linkProps"
+        ]
+      ]
+    },
+    "assets/index-CBRcanzC-23.js": {
+      "Cs": [
+        [
+          1340,
+          "qualitySetting"
+        ],
+        [
+          1405,
+          "qualitySetting"
+        ],
+        [
+          1408,
+          "qualitySetting"
+        ]
+      ]
+    },
+    "assets/worker-BdHOuDMt-01.js": {
+      "N": [
+        [
+          1203,
+          "Vector3"
+        ],
+        [
+          3501,
+          "Vector3"
+        ]
+      ]
+    },
+    "assets/worker-BdHOuDMt-02.js": {
+      "H": [
+        [
+          135,
+          "smoothstep"
+        ],
+        [
+          196,
+          "smoothstep"
+        ],
+        [
+          257,
+          "smoothstep"
+        ],
+        [
+          319,
+          "smoothstep"
+        ],
+        [
+          703,
+          "smoothstep"
+        ],
+        [
+          733,
+          "smoothstep"
+        ],
+        [
+          825,
+          "smoothstep"
+        ],
+        [
+          854,
+          "smoothstep"
+        ],
+        [
+          895,
+          "smoothstep"
+        ],
+        [
+          1468,
+          "smoothstep"
+        ],
+        [
+          1798,
+          "smoothstep"
+        ],
+        [
+          3414,
+          "smoothstep"
+        ]
+      ],
+      "N": [
+        [
+          1590,
+          "Vector3"
+        ],
+        [
+          1644,
+          "Vector3"
+        ]
+      ]
+    },
+    "assets/worker-BdHOuDMt-03.js": {
+      "N": [
+        [
+          626,
+          "Vector3"
+        ],
+        [
+          650,
+          "Vector3"
+        ],
+        [
+          735,
+          "Vector3"
+        ],
+        [
+          793,
+          "Vector3"
+        ],
+        [
+          836,
+          "Vector3"
+        ],
+        [
+          1310,
+          "Vector3"
+        ],
+        [
+          1350,
+          "Vector3"
+        ],
+        [
+          1472,
+          "Vector3"
+        ],
+        [
+          1842,
+          "Vector3"
+        ],
+        [
+          2149,
+          "Vector3"
+        ],
+        [
+          2326,
+          "Vector3"
+        ],
+        [
+          2528,
+          "Vector3"
+        ]
+      ]
+    },
+    "assets/worker-BdHOuDMt-04.js": {
+      "rs": [
+        [
+          858,
+          "noGlow"
+        ]
+      ]
+    },
+    "assets/worker-BdHOuDMt-05.js": {
+      "H": [
+        [
+          497,
+          "smoothstep"
+        ],
+        [
+          530,
+          "smoothstep"
+        ],
+        [
+          548,
+          "smoothstep"
+        ],
+        [
+          575,
+          "smoothstep"
+        ],
+        [
+          691,
+          "smoothstep"
+        ],
+        [
+          715,
+          "smoothstep"
+        ],
+        [
+          5209,
+          "smoothstep"
+        ],
+        [
+          5280,
+          "smoothstep"
+        ],
+        [
+          5313,
+          "smoothstep"
+        ],
+        [
+          5482,
+          "smoothstep"
+        ],
+        [
+          5496,
+          "smoothstep"
+        ],
+        [
+          5543,
+          "smoothstep"
+        ],
+        [
+          6674,
+          "smoothstep"
+        ]
+      ],
+      "N": [
+        [
+          1668,
+          "Vector3"
+        ],
+        [
+          1876,
+          "Vector3"
+        ],
+        [
+          2074,
+          "Vector3"
+        ],
+        [
+          2398,
+          "Vector3"
+        ],
+        [
+          2428,
+          "Vector3"
+        ],
+        [
+          2450,
+          "Vector3"
+        ],
+        [
+          2534,
+          "Vector3"
+        ],
+        [
+          2708,
+          "Vector3"
+        ],
+        [
+          2744,
+          "Vector3"
+        ],
+        [
+          2862,
+          "Vector3"
+        ],
+        [
+          2974,
+          "Vector3"
+        ],
+        [
+          3396,
+          "Vector3"
+        ],
+        [
+          3444,
+          "Vector3"
+        ],
+        [
+          3526,
+          "Vector3"
+        ],
+        [
+          3565,
+          "Vector3"
+        ],
+        [
+          3828,
+          "Vector3"
+        ],
+        [
+          3928,
+          "Vector3"
+        ],
+        [
+          3954,
+          "Vector3"
+        ],
+        [
+          4056,
+          "Vector3"
+        ],
+        [
+          4088,
+          "Vector3"
+        ],
+        [
+          4123,
+          "Vector3"
+        ],
+        [
+          4138,
+          "Vector3"
+        ],
+        [
+          4150,
+          "Vector3"
+        ],
+        [
+          4341,
+          "Vector3"
+        ],
+        [
+          4383,
+          "Vector3"
+        ],
+        [
+          4427,
+          "Vector3"
+        ],
+        [
+          4512,
+          "Vector3"
+        ],
+        [
+          5855,
+          "Vector3"
+        ],
+        [
+          6287,
+          "Vector3"
+        ],
+        [
+          6419,
+          "Vector3"
+        ],
+        [
+          6944,
+          "Vector3"
+        ],
+        [
+          7095,
+          "Vector3"
+        ],
+        [
+          7183,
+          "Vector3"
+        ],
+        [
+          7420,
+          "Vector3"
+        ],
+        [
+          8006,
+          "Vector3"
+        ],
+        [
+          8194,
+          "Vector3"
+        ],
+        [
+          8963,
+          "Vector3"
+        ],
+        [
+          9307,
+          "Vector3"
+        ],
+        [
+          9711,
+          "Vector3"
+        ]
+      ]
+    },
+    "assets/worker-BdHOuDMt-06.js": {
+      "N": [
+        [
+          270,
+          "Vector3"
+        ],
+        [
+          545,
+          "Vector3"
+        ],
+        [
+          1566,
+          "Vector3"
+        ]
+      ]
+    }
+  }
+}

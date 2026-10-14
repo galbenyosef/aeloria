@@ -1,0 +1,398 @@
+{
+  "project": "aeloria",
+  "kind": "statement-aligned-slices",
+  "defaultFile": "src/assets__index-CBRcanzC-01.js",
+  "note": "AELORIA (https://aeloria.pokeable.app/) is capture-class: a Vite production build of a procedural bioluminescent world (floating mountains, giant trees, winged riders) served at the origin root on the pokeable.app platform. §0.4 fork-over-mirror was checked on 2026-10-13 — every github.com reference in the capture is a library credit (pmndrs/postprocessing, pmndrs/zustand, docs.pmnd.rs/react-three-fiber) or a runtime file-path string; no project's own public source repo is referenced or published, so the mirror stands. Derived pipeline: capture → pinned prettier 3.9.6 (module API, default options, single pass verified idempotent — never the CLI: it respects .gitignore and can silently echo its input) → readable/<name>.pretty.js|css per captured JS/CSS file (capture-relative name, nested dirs flattened with __; every pretty provably NOT byte-identical to its capture source) → statement-aligned slices src/<name>-NN.js of every APP chunk (top-level declaration boundaries only, ~250-350 line windows; oversized single declarations stay whole) with an exact 2-line provenance header. Every slice parses standalone under `node --input-type=module --check -` and round-trips byte-exact to its recorded readable line range. Vendor rule — wholeFile sections, never sliced: assets/three-Bf1rlsf7.js (the three.js r169 build) and assets/react-D7cucQ1e.js (the React runtime chunk: React/react-dom/react-reconciler + react-three-fiber + zustand). Merged worker rule — assets/worker-BdHOuDMt.js is a single chunk that starts with the bundled three.js r169 worker core (wholeFile, content-anchored at the classic `__THREE__` module tail) and then carries the app's world builder (statement-aligned slices). Machinery rule — the Vite modulepreload polyfill opening the app entry chunk is wholeFile. Inlined-region rule — the app entry chunk also inlines pmndrs/postprocessing v6.37.1 (license-anchored: `postprocessing v6.37.1 build`, @license Zlib) between the app's camera code and its wing builder; the region is wholeFile, never sliced. Stylesheet rule — assets/index-Ctb6YBeZ.css is wholeFile. Non-standalone parts are skipped sections, indexed but never sliced: a pure trailing export {…} table where one exists. Inline <script>/<style> scan: index.html references external resources only (module script, modulepreload links, stylesheet, Google Fonts, the platform's Cloudflare beacon) — zero inline content blocks, so there are no *-inline-N twins and no index-inline-map.json. Identifiers in src/ are the bundle's own minified names — the rename campaign (PLAN §5) is recorded as an open task in README.md, not claimed here. Capture bytes are untouched by everything above; re-cut with `node tools/derive.mjs` after any capture refresh. `node tools/audit.js` is the gate.",
+  "renderOptions": {
+    "_default": "prettier 3.9.6, module API, default options, single pass (re-format verified idempotent at derive time) — never the CLI: it respects .gitignore and can silently echo its input",
+    "js": "parser babel, no plugins",
+    "css": "parser css, no plugins",
+    "json": "parser json, no plugins (inline importmap blocks, if any)"
+  },
+  "source": "readable/: 4 JS pretties (2 app chunk(s) sliced, 2 vendor wholeFile) + 1 CSS pretties; src/: 30 statement-aligned slices across 2 app chunk(s); 0 skipped section(s); 6 wholeFile section(s); capture: 6 files under .upstream/manifest.json; inline scan: index.html (0 inline content block(s)); notRendered: 0 payload(s).",
+  "inline": {
+    "scanned": [
+      "index.html"
+    ],
+    "contentBlocks": 0,
+    "notRendered": 0,
+    "note": "no inline <script>/<style> content blocks in the captured entry document — external references only (module script, modulepreload links, stylesheet, Google Fonts, Cloudflare beacon), so there are no *-inline-N twins and no readable/index-inline-map.json"
+  },
+  "sources": [
+    {
+      "sourceFile": "readable/assets__index-CBRcanzC.pretty.js",
+      "capture": "assets/index-CBRcanzC.js",
+      "captureKind": "file",
+      "captureSha256": "69c5a92b376b17c2a331fb96de8b849a974e18d3896328d172dc7acbd5b6052e",
+      "captureBytes": 240317,
+      "prettyLines": 11088,
+      "prettyBytes": 350050,
+      "prettyPasses": 1,
+      "idempotent": true,
+      "tag": "assets__index-CBRcanzC",
+      "slices": 24,
+      "derived": "readable + 24 statement-aligned slice(s) + 2 wholeFile region(s)"
+    },
+    {
+      "sourceFile": "readable/assets__worker-BdHOuDMt.pretty.js",
+      "capture": "assets/worker-BdHOuDMt.js",
+      "captureKind": "file",
+      "captureSha256": "e41a7360ca33fe360096f47fe6a904e0119615c2843a2cdfab9ceb4320ed7386",
+      "captureBytes": 140475,
+      "prettyLines": 8883,
+      "prettyBytes": 226698,
+      "prettyPasses": 1,
+      "idempotent": true,
+      "tag": "assets__worker-BdHOuDMt",
+      "slices": 6,
+      "derived": "readable + 6 statement-aligned slice(s) + 1 wholeFile region(s)"
+    },
+    {
+      "sourceFile": "readable/assets__react-D7CucQ1e.pretty.js",
+      "capture": "assets/react-D7CucQ1e.js",
+      "captureKind": "file",
+      "captureSha256": "c92c0fa5636bf94b3b48e5f3556432796f5dd03a48ecf68500060d982dbd8254",
+      "captureBytes": 276084,
+      "prettyLines": 17448,
+      "prettyBytes": 470605,
+      "prettyPasses": 1,
+      "idempotent": true,
+      "tag": "assets__react-D7CucQ1e",
+      "slices": 0,
+      "derived": "readable only (vendor bundle, wholeFile)",
+      "what": "React runtime vendor chunk — React/react-dom/react-reconciler + react-three-fiber + zustand (vendor, whole file)"
+    },
+    {
+      "sourceFile": "readable/assets__three-Bf1rlsf7.pretty.js",
+      "capture": "assets/three-Bf1rlsf7.js",
+      "captureKind": "file",
+      "captureSha256": "5719ba332ec7d1162b7caee2d43d718f78d577eed5037361d6eb92290bb5aa3b",
+      "captureBytes": 683693,
+      "prettyLines": 33397,
+      "prettyBytes": 971110,
+      "prettyPasses": 1,
+      "idempotent": true,
+      "tag": "assets__three-Bf1rlsf7",
+      "slices": 0,
+      "derived": "readable only (vendor bundle, wholeFile)",
+      "what": "three.js r169 build (vendor, whole file)"
+    },
+    {
+      "sourceFile": "readable/assets__index-Ctb6YBeZ.pretty.css",
+      "capture": "assets/index-Ctb6YBeZ.css",
+      "captureKind": "file",
+      "captureSha256": "2f27032d7ce2c57ac741cc5c117efbf59dfe7c5bd53e040b4b5b5af205b859cb",
+      "captureBytes": 17253,
+      "prettyLines": 1211,
+      "prettyBytes": 21571,
+      "prettyPasses": 1,
+      "idempotent": true,
+      "tag": "assets__index-Ctb6YBeZ",
+      "slices": 0,
+      "derived": "readable only (stylesheet, wholeFile)"
+    }
+  ],
+  "sections": [
+    {
+      "file": "assets__index-CBRcanzC-01.js",
+      "title": "assets__index-CBRcanzC 01 — imports",
+      "desc": "Lines 1-89. Markers: .",
+      "startLine": 1,
+      "endLine": 89,
+      "sourceFile": "readable/assets__index-CBRcanzC.pretty.js"
+    },
+    {
+      "file": "assets__index-CBRcanzC-polyfill-machinery.js",
+      "wholeFile": true,
+      "title": "assets__index-CBRcanzC — Vite modulepreload polyfill (build machinery, whole-file, never sliced)",
+      "desc": "Lines 90-119 of readable/assets__index-CBRcanzC.pretty.js: the Vite-generated modulepreload polyfill IIFE (`link[rel=modulepreload]` relList.supports check + fetch warm-up) — build machinery, not app code; indexed whole-file in readable/, never sliced.",
+      "note": "whole-file region (build machinery/vendor rule): indexed in readable/, never sliced",
+      "startLine": 90,
+      "endLine": 119,
+      "sourceFile": "readable/assets__index-CBRcanzC.pretty.js"
+    },
+    {
+      "file": "assets__index-CBRcanzC-02.js",
+      "title": "assets__index-CBRcanzC 02 — math",
+      "desc": "Lines 120-427. Markers: math(32), float32array(12).",
+      "startLine": 120,
+      "endLine": 427,
+      "sourceFile": "readable/assets__index-CBRcanzC.pretty.js"
+    },
+    {
+      "file": "assets__index-CBRcanzC-03.js",
+      "title": "assets__index-CBRcanzC 03 — uniforms",
+      "desc": "Lines 428-776. Markers: uniforms(15), replace(11).",
+      "startLine": 428,
+      "endLine": 776,
+      "sourceFile": "readable/assets__index-CBRcanzC.pretty.js"
+    },
+    {
+      "file": "assets__index-CBRcanzC-04.js",
+      "title": "assets__index-CBRcanzC 04 — glow",
+      "desc": "Lines 777-1114. Markers: glow(12), fog(11).",
+      "startLine": 777,
+      "endLine": 1114,
+      "sourceFile": "readable/assets__index-CBRcanzC.pretty.js"
+    },
+    {
+      "file": "assets__index-CBRcanzC-05.js",
+      "title": "assets__index-CBRcanzC 05 — math",
+      "desc": "Lines 1115-1447. Markers: math(33), push(20).",
+      "startLine": 1115,
+      "endLine": 1447,
+      "sourceFile": "readable/assets__index-CBRcanzC.pretty.js"
+    },
+    {
+      "file": "assets__index-CBRcanzC-06.js",
+      "title": "assets__index-CBRcanzC 06 — math",
+      "desc": "Lines 1448-1661. Markers: math(28), hypot(9).",
+      "startLine": 1448,
+      "endLine": 1661,
+      "sourceFile": "readable/assets__index-CBRcanzC.pretty.js"
+    },
+    {
+      "file": "assets__index-CBRcanzC-07.js",
+      "title": "assets__index-CBRcanzC 07 — math",
+      "desc": "Oversized single declaration (kept whole). Lines 1662-2020. Markers: math(70), pos(43).",
+      "startLine": 1662,
+      "endLine": 2020,
+      "sourceFile": "readable/assets__index-CBRcanzC.pretty.js"
+    },
+    {
+      "file": "assets__index-CBRcanzC-08.js",
+      "title": "assets__index-CBRcanzC 08 — math",
+      "desc": "Lines 2021-2347. Markers: math(24), root(10).",
+      "startLine": 2021,
+      "endLine": 2347,
+      "sourceFile": "readable/assets__index-CBRcanzC.pretty.js"
+    },
+    {
+      "file": "assets__index-CBRcanzC-09.js",
+      "title": "assets__index-CBRcanzC 09 — replace",
+      "desc": "Lines 2348-2686. Markers: replace(22), math(12).",
+      "startLine": 2348,
+      "endLine": 2686,
+      "sourceFile": "readable/assets__index-CBRcanzC.pretty.js"
+    },
+    {
+      "file": "assets__index-CBRcanzC-10.js",
+      "title": "assets__index-CBRcanzC 10 — array",
+      "desc": "Lines 2687-2721. Markers: array(7), attributes(3).",
+      "startLine": 2687,
+      "endLine": 2721,
+      "sourceFile": "readable/assets__index-CBRcanzC.pretty.js"
+    },
+    {
+      "file": "assets__index-CBRcanzC-11.js",
+      "title": "assets__index-CBRcanzC 11 — math",
+      "desc": "Oversized single declaration (kept whole). Lines 2722-3289. Markers: math(58), float32array(25).",
+      "startLine": 2722,
+      "endLine": 3289,
+      "sourceFile": "readable/assets__index-CBRcanzC.pretty.js"
+    },
+    {
+      "file": "assets__index-CBRcanzC-12.js",
+      "title": "assets__index-CBRcanzC 12 — mesh",
+      "desc": "Lines 3290-3427. Markers: mesh(12), next(11).",
+      "startLine": 3290,
+      "endLine": 3427,
+      "sourceFile": "readable/assets__index-CBRcanzC.pretty.js"
+    },
+    {
+      "file": "assets__index-CBRcanzC-13.js",
+      "title": "assets__index-CBRcanzC 13 — connect",
+      "desc": "Oversized single declaration (kept whole). Lines 3428-3870. Markers: connect(67), gain(54).",
+      "startLine": 3428,
+      "endLine": 3870,
+      "sourceFile": "readable/assets__index-CBRcanzC.pretty.js"
+    },
+    {
+      "file": "assets__index-CBRcanzC-14.js",
+      "title": "assets__index-CBRcanzC 14 — pad",
+      "desc": "Lines 3871-4003. Markers: pad(18), math(11).",
+      "startLine": 3871,
+      "endLine": 4003,
+      "sourceFile": "readable/assets__index-CBRcanzC.pretty.js"
+    },
+    {
+      "file": "assets__index-CBRcanzC-15.js",
+      "title": "assets__index-CBRcanzC 15 — math",
+      "desc": "Lines 4004-4225. Markers: math(33), pos(27).",
+      "startLine": 4004,
+      "endLine": 4225,
+      "sourceFile": "readable/assets__index-CBRcanzC.pretty.js"
+    },
+    {
+      "file": "assets__index-CBRcanzC-postprocessing-vendor.js",
+      "wholeFile": true,
+      "title": "assets__index-CBRcanzC — inlined pmndrs/postprocessing v6.37.1 (vendor region, whole-file, never sliced)",
+      "desc": "Lines 4226-7271 of readable/assets__index-CBRcanzC.pretty.js: the pmndrs/postprocessing library (EffectComposer/EffectPass and the effect classes, the shader-template machinery, the clock and the depth-texture helpers) inlined into the app chunk by the build, license-anchored (`postprocessing v6.37.1 build`, @license Zlib) and asserted against the app code that precedes and resumes after it — vendor, not app code. Vendor rule — indexed whole-file in readable/, never sliced or rewritten.",
+      "note": "whole-file region (build machinery/vendor rule): indexed in readable/, never sliced",
+      "startLine": 4226,
+      "endLine": 7271,
+      "sourceFile": "readable/assets__index-CBRcanzC.pretty.js"
+    },
+    {
+      "file": "assets__index-CBRcanzC-16.js",
+      "title": "assets__index-CBRcanzC 16 — math",
+      "desc": "Lines 7272-7606. Markers: math(38), geo(9).",
+      "startLine": 7272,
+      "endLine": 7606,
+      "sourceFile": "readable/assets__index-CBRcanzC.pretty.js"
+    },
+    {
+      "file": "assets__index-CBRcanzC-17.js",
+      "title": "assets__index-CBRcanzC 17 — math",
+      "desc": "Lines 7607-7835. Markers: math(20), random(11).",
+      "startLine": 7607,
+      "endLine": 7835,
+      "sourceFile": "readable/assets__index-CBRcanzC.pretty.js"
+    },
+    {
+      "file": "assets__index-CBRcanzC-18.js",
+      "title": "assets__index-CBRcanzC 18 — math",
+      "desc": "Oversized single declaration (kept whole). Lines 7836-9371. Markers: math(75), pos(70).",
+      "startLine": 7836,
+      "endLine": 9371,
+      "sourceFile": "readable/assets__index-CBRcanzC.pretty.js"
+    },
+    {
+      "file": "assets__index-CBRcanzC-19.js",
+      "title": "assets__index-CBRcanzC 19 — children",
+      "desc": "Lines 9372-9698. Markers: children(50), jsx(34).",
+      "startLine": 9372,
+      "endLine": 9698,
+      "sourceFile": "readable/assets__index-CBRcanzC.pretty.js"
+    },
+    {
+      "file": "assets__index-CBRcanzC-20.js",
+      "title": "assets__index-CBRcanzC 20 — children",
+      "desc": "Lines 9699-9984. Markers: children(36), jsx(31).",
+      "startLine": 9699,
+      "endLine": 9984,
+      "sourceFile": "readable/assets__index-CBRcanzC.pretty.js"
+    },
+    {
+      "file": "assets__index-CBRcanzC-21.js",
+      "title": "assets__index-CBRcanzC 21 — children",
+      "desc": "Lines 9985-10290. Markers: children(78), jsx(45).",
+      "startLine": 9985,
+      "endLine": 10290,
+      "sourceFile": "readable/assets__index-CBRcanzC.pretty.js"
+    },
+    {
+      "file": "assets__index-CBRcanzC-22.js",
+      "title": "assets__index-CBRcanzC 22 — children",
+      "desc": "Lines 10291-10627. Markers: children(37), classname(33).",
+      "startLine": 10291,
+      "endLine": 10627,
+      "sourceFile": "readable/assets__index-CBRcanzC.pretty.js"
+    },
+    {
+      "file": "assets__index-CBRcanzC-23.js",
+      "title": "assets__index-CBRcanzC 23 — children",
+      "desc": "Lines 10628-10885. Markers: children(36), jsx(23).",
+      "startLine": 10628,
+      "endLine": 10885,
+      "sourceFile": "readable/assets__index-CBRcanzC.pretty.js"
+    },
+    {
+      "file": "assets__index-CBRcanzC-24.js",
+      "title": "assets__index-CBRcanzC 24 — jsx",
+      "desc": "Lines 10886-11088. Markers: jsx(20), code(13).",
+      "startLine": 10886,
+      "endLine": 11088,
+      "sourceFile": "readable/assets__index-CBRcanzC.pretty.js"
+    },
+    {
+      "file": "assets__worker-BdHOuDMt-three-vendor.js",
+      "wholeFile": true,
+      "title": "assets__worker-BdHOuDMt — bundled three.js r169 worker core (vendor region, whole-file, never sliced)",
+      "desc": "Lines 1-6734 of readable/assets__worker-BdHOuDMt.pretty.js: the three.js r169 engine subset the build bundles into the world-generation worker (math, curves, geometries, colors, buffers, `__THREE__` revision 169 registration) — vendor, not app code; the app's world builder resumes right after it. Vendor rule — indexed whole-file in readable/, never sliced or rewritten.",
+      "note": "whole-file region (build machinery/vendor rule): indexed in readable/, never sliced",
+      "startLine": 1,
+      "endLine": 6734,
+      "sourceFile": "readable/assets__worker-BdHOuDMt.pretty.js"
+    },
+    {
+      "file": "assets__worker-BdHOuDMt-01.js",
+      "title": "assets__worker-BdHOuDMt 01 — math",
+      "desc": "Lines 6735-7049. Markers: math(26), float32array(18).",
+      "startLine": 6735,
+      "endLine": 7049,
+      "sourceFile": "readable/assets__worker-BdHOuDMt.pretty.js"
+    },
+    {
+      "file": "assets__worker-BdHOuDMt-02.js",
+      "title": "assets__worker-BdHOuDMt 02 — math",
+      "desc": "Lines 7050-7387. Markers: math(43), push(14).",
+      "startLine": 7050,
+      "endLine": 7387,
+      "sourceFile": "readable/assets__worker-BdHOuDMt.pretty.js"
+    },
+    {
+      "file": "assets__worker-BdHOuDMt-03.js",
+      "title": "assets__worker-BdHOuDMt 03 — math",
+      "desc": "Lines 7388-7729. Markers: math(34), push(21).",
+      "startLine": 7388,
+      "endLine": 7729,
+      "sourceFile": "readable/assets__worker-BdHOuDMt.pretty.js"
+    },
+    {
+      "file": "assets__worker-BdHOuDMt-04.js",
+      "title": "assets__worker-BdHOuDMt 04 — math",
+      "desc": "Lines 7730-7838. Markers: math(12), density(3).",
+      "startLine": 7730,
+      "endLine": 7838,
+      "sourceFile": "readable/assets__worker-BdHOuDMt.pretty.js"
+    },
+    {
+      "file": "assets__worker-BdHOuDMt-05.js",
+      "title": "assets__worker-BdHOuDMt 05 — math",
+      "desc": "Oversized single declaration (kept whole). Lines 7839-8709. Markers: math(95), push(58).",
+      "startLine": 7839,
+      "endLine": 8709,
+      "sourceFile": "readable/assets__worker-BdHOuDMt.pretty.js"
+    },
+    {
+      "file": "assets__worker-BdHOuDMt-06.js",
+      "title": "assets__worker-BdHOuDMt 06 — math",
+      "desc": "Lines 8710-8883. Markers: math(14), groundy(5).",
+      "startLine": 8710,
+      "endLine": 8883,
+      "sourceFile": "readable/assets__worker-BdHOuDMt.pretty.js"
+    },
+    {
+      "file": "assets__react-D7CucQ1e-vendor.js",
+      "wholeFile": true,
+      "title": "assets__react-D7CucQ1e — React runtime vendor chunk — React/react-dom/react-reconciler + react-three-fiber + zustand (vendor, whole file) (whole-file, never sliced)",
+      "desc": "Lines 1-17448 of readable/assets__react-D7CucQ1e.pretty.js: third-party library captured byte-exact from the origin (React runtime vendor chunk — React/react-dom/react-reconciler + react-three-fiber + zustand (vendor, whole file)) — vendor rule: indexed whole-file in readable/, never sliced or rewritten.",
+      "note": "whole-file (vendor rule): indexed in readable/, never sliced",
+      "startLine": 1,
+      "endLine": 17448,
+      "sourceFile": "readable/assets__react-D7CucQ1e.pretty.js"
+    },
+    {
+      "file": "assets__three-Bf1rlsf7-vendor.js",
+      "wholeFile": true,
+      "title": "assets__three-Bf1rlsf7 — three.js r169 build (vendor, whole file) (whole-file, never sliced)",
+      "desc": "Lines 1-33397 of readable/assets__three-Bf1rlsf7.pretty.js: third-party library captured byte-exact from the origin (three.js r169 build (vendor, whole file)) — vendor rule: indexed whole-file in readable/, never sliced or rewritten.",
+      "note": "whole-file (vendor rule): indexed in readable/, never sliced",
+      "startLine": 1,
+      "endLine": 33397,
+      "sourceFile": "readable/assets__three-Bf1rlsf7.pretty.js"
+    },
+    {
+      "file": "assets__index-Ctb6YBeZ.css",
+      "wholeFile": true,
+      "title": "assets__index-Ctb6YBeZ — stylesheet (whole-file, never sliced)",
+      "desc": "Lines 1-1211 of readable/assets__index-Ctb6YBeZ.pretty.css. Whole-file (stylesheet rule): the capture stylesheet is indexed whole in readable/, never sliced.",
+      "note": "whole-file (stylesheet, not sliced): CSS is indexed whole in readable/",
+      "startLine": 1,
+      "endLine": 1211,
+      "sourceFile": "readable/assets__index-Ctb6YBeZ.pretty.css"
+    }
+  ],
+  "notRendered": []
+}
