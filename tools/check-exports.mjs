@@ -225,7 +225,7 @@ function scanTemplate(st) {
  */
 function publicExportNamesText(text) {
   const names = new Set();
-  for (const m of text.matchAll(/export\s*\{([^}]*)\}/g)) {
+  for (const m of text.matchAll(/\bexport\s*\{([^}]*)\}/g)) {
     for (const part of m[1].split(",")) {
       const seg = part.trim();
       if (!seg) continue;
@@ -234,10 +234,115 @@ function publicExportNamesText(text) {
       else if (as.length === 1) names.add(seg);
     }
   }
-  for (const m of text.matchAll(/export\s+(?:const|let|var|function|class|async\s+function)\s+([A-Za-z_$][\w$]*)/g))
+  for (const m of text.matchAll(/\bexport\s+(?:const|let|var|function|class|async\s+function)\s+([A-Za-z_$][\w$]*)/g))
     names.add(m[1]);
   if (/\bexport\s+default\b/.test(text)) names.add("default");
   return names;
+}
+
+/**
+ * The names a `const`/`let`/`var` declaration BINDS — the only names the
+ * declaration form exports.
+ *
+ *   export const a = 1, b = 2;      -> a, b
+ *   export const { p, q } = obj;    -> p, q      (destructuring)
+ *   export const { a: b } = obj;    -> b         (the KEY `a` is not bound)
+ *
+ * Two things must NOT be counted:
+ *
+ * 1. The INITIALIZER binds nothing. `export const h = (id) => typeof id`
+ *    exports `h`, not `id`. The scanner therefore tracks whether it is still
+ *    in the BINDING part of the declarator list: the binding ends at the
+ *    first `=` (the initializer begins) and resumes at the next `,` (the
+ *    next declarator begins). Without that, an initializer's own
+ *    identifiers were counted as exported names — and since the capture and
+ *    the layer format the same initializer differently (prettier wraps it),
+ *    that produced a FALSE "public export name was LOST".
+ *
+ * 2. A destructuring KEY is not a binding. `{ a: b }` binds `b`.
+ *
+ * The rule is deliberately conservative: an identifier is counted only when
+ * it is unambiguously a binding. Over-counting would report a false LOST;
+ * under-counting merely misses a check, and the missing check is reported
+ * honestly by the uncovered-table counter.
+ */
+function declaredNames(ts, start) {
+  const out = new Set();
+  const t0 = ts[start];
+  if (!t0) return out;
+
+  // the DESTRUCTURING shape: the declaration starts with a pattern
+  if (t0.t === "pun" && (t0.v === "{" || t0.v === "[")) {
+    const open = t0.v;
+    const close = open === "{" ? "}" : "]";
+    let depth = 0;
+    for (let k = start; k < ts.length; k++) {
+      const tk = ts[k];
+      depth = depthOf(tk, depth);
+      if (depth === 0 && tk.t === "pun" && tk.v === close) break;
+      // one level inside the pattern: a binding unless it is a KEY
+      if (tk.t === "id" && depth === 1) {
+        const nx = ts[k + 1];
+        const isKey = nx && nx.t === "pun" && nx.v === ":";
+        if (!isKey) out.add(tk.v);
+      }
+    }
+    return out;
+  }
+
+  // the SIMPLE shape: names separated by `,` at depth 0
+  let depth = 0;
+  let inBinding = true;
+  for (let k = start; k < ts.length && k < start + 400; k++) {
+    const tk = ts[k];
+    depth = depthOf(tk, depth);
+    if (depth === 0) {
+      if (tk.t === "pun" && tk.v === "=") inBinding = false;
+      else if (tk.t === "pun" && tk.v === ",") inBinding = true;
+      else if (tk.t === "id" && inBinding && tk.v !== "of" && tk.v !== "in") out.add(tk.v);
+    }
+    if (tk.t === "pun" && tk.v === ";" && depth === 0) break;
+    if (tk.t === "pun" && tk.v === "}" && depth === 0 && ts[k - 1]?.t === "pun" && ts[k - 1].v === "{") break;
+  }
+  return out;
+}
+
+/**
+ * The bracket depth of a token, for the scanner that has to know where a
+ * construct ENDS.
+ *
+ * The tokenizer emits a template literal's interpolation as a `${` token
+ * followed by the inner tokens and a `}` token — the two are separate. So a
+ * scanner that counts only `{` and `}` sees the interpolation's `}` with no
+ * matching `{`, and its depth goes NEGATIVE. From there every later
+ * `;` looks like it is at the wrong depth, the declaration scan never stops,
+ * and a comma inside a template puts the scanner back into "binding" mode —
+ * which counted the template's own identifiers as exported names.
+ *
+ * So `${` opens a bracket and `}` closes it: the pair balances.
+ */
+function depthOf(tk, depth) {
+  if (tk.t !== "pun") return depth;
+  if (tk.v === "{" || tk.v === "(" || tk.v === "[" || tk.v === "${") return depth + 1;
+  if (tk.v === "}" || tk.v === ")" || tk.v === "]") return depth - 1;
+  return depth;
+}
+
+/**
+ * The index of the `}` that closes the `{` at `start`, or -1.
+ */
+function closingBrace(ts, start) {
+  let depth = 0;
+  for (let k = start; k < ts.length; k++) {
+    const tk = ts[k];
+    if (tk.t === "pun" && (tk.v === "{" || tk.v === "(" || tk.v === "[" || tk.v === "${")) depth++;
+    else if (tk.t === "pun" && (tk.v === "}" || tk.v === ")" || tk.v === "]")) {
+      depth--;
+      if (depth === 0 && tk.v === "}") return k;
+      if (depth < 0) return -1;
+    }
+  }
+  return -1;
 }
 
 function publicExportNames(text) {
@@ -249,8 +354,8 @@ function publicExportNames(text) {
     const n1 = ts[i + 1];
     if (!n1) continue;
     if (n1.t === "pun" && n1.v === "{") {
-      let end = i + 2;
-      while (end < ts.length && !(ts[end].t === "pun" && ts[end].v === "}")) end++;
+      const end = closingBrace(ts, i + 1);
+      if (end < 0) continue;
       let group = [];
       const flush = () => {
         if (!group.length) return;
@@ -281,27 +386,7 @@ function publicExportNames(text) {
       const name = ts[i + 2];
       if (name && name.t === "id") names.add(name.v);
     } else if (n1.t === "id" && (n1.v === "const" || n1.v === "let" || n1.v === "var")) {
-      // Only the declarator NAMES of the declaration count. The
-      // initializer's own object-literal properties are NOT exports:
-      // `export const _debug = () => ({ ctx, master, ... })` exports
-      // `_debug`, not `ctx` or `master`. So the scan tracks brace depth
-      // and stops at the end of the DECLARATION.
-      let depth = 0;
-      for (let k = i + 2; k < ts.length && k < i + 400; k++) {
-        const tk = ts[k];
-        if (tk.t === "pun" && (tk.v === "{" || tk.v === "(" || tk.v === "[")) depth++;
-        else if (tk.t === "pun" && (tk.v === "}" || tk.v === ")" || tk.v === "]")) depth--;
-        if (tk.t === "id" && depth === 0) {
-          const nx = ts[k + 1];
-          const isDeclarator =
-            nx &&
-            ((nx.t === "pun" && (nx.v === "=" || nx.v === "," || nx.v === ";" || nx.v === ")" || nx.v === "}")) ||
-              nx.t === "id");
-          if (isDeclarator && tk.v !== "of" && tk.v !== "in") names.add(tk.v);
-        }
-        if (tk.t === "pun" && tk.v === ";" && depth === 0) break;
-        if (tk.t === "pun" && tk.v === "}" && depth === 0 && ts[k - 1]?.t === "pun" && ts[k - 1].v === "{") break;
-      }
+      for (const nm of declaredNames(ts, i + 2)) names.add(nm);
     }
   }
   return names;
@@ -335,9 +420,8 @@ function exportTables(text) {
     if (t.t !== "id" || t.v !== "export") continue;
     const n1 = ts[i + 1];
     if (!n1 || n1.t !== "pun" || n1.v !== "{") continue;
-    let end = i + 2;
-    while (end < ts.length && !(ts[end].t === "pun" && ts[end].v === "}")) end++;
-    if (end >= ts.length) continue;
+    const end = closingBrace(ts, i + 1);
+    if (end < 0) continue;
     out.push({ from: lineOf(t.s), to: lineOf(ts[end].e) });
     i = end;
   }
@@ -556,6 +640,11 @@ let skipped = 0;
 const skippedBy = new Map();
 for (const src of sources) {
   if (!src.sourceFile) continue;
+  // A source that is not JAVASCRIPT has no export table. A CSS file's
+  // `.export { … }` rule is not an export table, and reading one as a table
+  // reported a public name lost. A stylesheet is part of the layer, but it
+  // carries no ES module surface.
+  if (!/\.(?:js|mjs|cjs|jsx)$/i.test(src.sourceFile)) continue;
   // the pristine: the spec's recorded path, else the capture under
   // `captureRoot`, else a file of that name anywhere in the mirror's tree
   const pristineCandidates = [];
